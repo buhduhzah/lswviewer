@@ -1,10 +1,12 @@
 {
     "builds": [
         { "src": "server.cjs", "use": "@vercel/node" },
-        { "src": "*", "use": "@vercel/static" }
+        { "src": "index.html", "use": "@vercel/static" },
+        { "src": "styles.css", "use": "@vercel/static" },
+        { "src": "app.js", "use": "@vercel/static" }
     ],
     "routes": [
         { "src": "/api/nft-data", "dest": "server.cjs" },
-        { "src": "/(.*)", "dest": "/$1" }
+        { "src": "/(.*)", "dest": "/index.html" }
     ]
 }
